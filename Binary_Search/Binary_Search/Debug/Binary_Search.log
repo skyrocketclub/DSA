@@ -1,0 +1,4 @@
+﻿  Binary_Search.cpp
+C:\Users\NWANKITI UGOCHUKWU\Desktop\CPP ++\DSA\Binary_Search\Binary_Search\Binary_Search.cpp(14,15): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+C:\Users\NWANKITI UGOCHUKWU\Desktop\CPP ++\DSA\Binary_Search\Binary_Search\Binary_Search.cpp(22,24): warning C4018: '<': signed/unsigned mismatch
+  Binary_Search.vcxproj -> C:\Users\NWANKITI UGOCHUKWU\Desktop\CPP ++\DSA\Binary_Search\Debug\Binary_Search.exe
