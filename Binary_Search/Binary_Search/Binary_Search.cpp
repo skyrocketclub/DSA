@@ -12,8 +12,8 @@ int main()
 
     //initializing random seed
     srand(time(NULL));
-    int num = rand() % 10 + 1; //genrates random number from 1 - 10
-    for (int i{ 0 }; i < 10; i++) {
+    int num = rand() % 100000000 + 1; //genrates random number from 1 - 100 000 000
+    for (int i{ 0 }; i < 100000000; i++) {
         cont.push_back(i);
     }
 
@@ -23,7 +23,7 @@ int main()
         if (cont.at(j) == num) {
             std::cout << "THE GUESSED NUMBER IS: " << num << std::endl;
             int end = clock();
-            std::cout<<"TIME ELASPED: "<<end-start<<" ticks"<<std::endl;
+            std::cout<<"TIME ELASPED WITH NORMAL SEARCH: "<<end-start<<" TICKS"<<std::endl;
         }
     }
 
@@ -31,20 +31,23 @@ int main()
     int low = 0;
     int high = cont.size() - 1;
     int mid{};
+    int start_2 = clock();
     while (low <= high) {
         mid = (low + high) / 2;
         if (num == cont.at(mid)) {
-            std::cout << "Trial: " << cont.at(mid) << std::endl;
-            std::cout << "Number found: " << num << std::endl;
+            // std::cout << "Trial: " << cont.at(mid) << std::endl;
+            // std::cout << "Number found: " << num << std::endl;
+            int end_2 = clock();
+            std::cout<<"TIME ELASPED WITH BINARY SEARCH: "<<end_2 - start_2<<" TICKS "<<std::endl;
             return 0;
         }
         //The guessed number is greater than the number proposed...
         if ( cont.at(mid)>num) {
-            std::cout << "Trial: " << cont.at(mid) << std::endl;
+          //  std::cout << "Trial: " << cont.at(mid) << std::endl;
             high = mid - 1;
         }
         else {
-            std::cout << "Trial: " << cont.at(mid) << std::endl;
+            // std::cout << "Trial: " << cont.at(mid) << std::endl;
             low = mid + 1;
         }
     }
