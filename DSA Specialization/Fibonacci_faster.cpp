@@ -1,9 +1,10 @@
 #include <iostream>
-
-long long fibo(int n){
-    long long number{0};
-    long long p_number{0};
-    long long pp_number{0};
+#include <math.h>
+//Fibo c++ breaks down for large numbers
+  unsigned long long int fibo(int n){
+    unsigned long long int  number{0};
+     unsigned long long int  p_number{0};
+     unsigned long long int pp_number{0};
 
      for(int i{0}; i<=n; i++){
          if(i==0){
@@ -19,10 +20,12 @@ long long fibo(int n){
             p_number = number;
          }
     }
-    return number;
+    return number ;
 }
 
 int main(){
-    std::cout<<fibo(100)<<std::endl;
+    for(int i{0};i<=300; i++){
+      std::cout<<i<<" : " <<fibo(i)<<std::endl;
+    }
     return 0;
 }
